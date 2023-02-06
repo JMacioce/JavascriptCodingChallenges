@@ -1,2 +1,3 @@
 # Javascript Coding Challenges
-Multiple JavaScript Coding Challenges to develop familiarity for interview questions!
+
+Gaining familiarity in the interview setting by solving questions commonly seen in interview questions
