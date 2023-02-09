@@ -16,7 +16,7 @@ function checkBrackets() {
     let testbrackets = testbrackets1;
 
     //implement isBalanced function. checks if the bracket string is balanced.
-    let results = isBalanced(testbrackets);
+    let results = isBalanced2(testbrackets);
 
     //used for display no need to change
     let msg = "";
@@ -70,4 +70,35 @@ function isBalanced(brackets) {
         }
     }
    return stack.length == 0;
+}
+
+//second solution, more concise code
+function isBalanced2(brackets) {
+    let stack = [];
+    let openBrackets = ["(","{","["];
+    let closedBrackets = [")","}","]"];
+
+    let balancedBrackets = {
+        "(" : ")",
+        "[" : "]",
+        "{" : "}"
+    };
+    for (let index = 0; index < brackets.length; index++) {
+        let item = brackets[index];
+        if (openBrackets.includes(item)) {
+            stack.push(item);
+            continue;
+        }
+        else if (closedBrackets.includes(item)) {
+            if (stack.length == 0) {
+                return false;
+            }
+
+            check = stack.pop();
+            if (balancedBrackets[check] != item) {
+                return false;
+            }
+        }
+    }
+    return stack.length == 0;
 }
