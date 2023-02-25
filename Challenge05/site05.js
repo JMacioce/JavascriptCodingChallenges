@@ -33,5 +33,21 @@ function checkAnagram() {
 //takes an two strings and determines if the are anagarms
 //returns true or false
 function isAnagram(stringA, stringB) {
-   return false;
+    stringA = stringA.replace(/\s+/g,'');
+    stringB = stringB.replace(/\s+/g,'');
+
+    //check to see if they're the same length
+    if (stringA.length != stringB.length) {
+        return false;
+    }
+
+    //convert to lowercase
+    stringA = stringA.toLowerCase();
+    stringB = stringB.toLowerCase();
+
+    stringA = stringA.split('').sort().join('');
+    stringB = stringB.split('').sort().join('');
+
+    return (stringA == stringB);
+
 }
