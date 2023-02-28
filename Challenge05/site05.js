@@ -23,7 +23,8 @@ function checkAnagram() {
 
     if (anagram == true) {
         msg = 'The two strings ARE anagrams';
-    } else {
+    } 
+    else {
         msg = 'The two strings ARE NOT anagrams';
     }
 
