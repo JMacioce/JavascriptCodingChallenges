@@ -19,13 +19,30 @@ function findVowels() {
         return;
     }
 
+    //document.getElementById("results").innerHTML = `You entered <strong>"${str}"</strong> it has ${vowelObj} vowels.`;
     document.getElementById("results").innerHTML = `You entered <strong>"${str}"</strong> it has ${vowelObj.vCount} vowels.<br>The vowels found are ${vowelObj.vFound.toString()}`;
-
 }
 
 //takes an string and returns the vowel count and the vowels found as an object.
 function getVowelCount(str) {
-    
-    return {};
+    let vowelCount = 0;
+    let vowels = ["a", "e", "i", "o", "u"];
+    let foundVowels = [];
+
+    str = str.toLowerCase();
+
+    for(let index = 0; index < str.length; index++) {
+        if(vowels.includes(str[index])) {
+            vowelCount ++;
+            foundVowels.push(str[index]);
+        }
+    }
+
+    let vowelobj = {
+        vCount : vowelCount,
+        vFound : foundVowels
+    }
+
+    return vowelobj;
 
 }
