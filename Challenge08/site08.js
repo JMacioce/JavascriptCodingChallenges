@@ -20,7 +20,12 @@ function displayNumbers() {
 
 //takes an array of numbers and returns the sum of all the numbers
 function sumNumbers(numArry) {
-    return 0;
+    let sum = 0;
+
+    for (let index = 0; index < numArry.length; index++) {
+        sum += numArry[index];
+    }
+    return sum;
 }
 
 //takes an array of numbers and the current index in the array and returns the sum of all the numbers using recursion
@@ -33,15 +38,39 @@ function sumNumbersRecursive(numArry, index) {
 
 //takes an array of numbers and returns the average of all the numbers
 function avgNumber(numArry) {
-    return 0;
+    let sum = 0;
+    let avg = 0;
+
+    for (let index = 0; index < numArry.length; index++) {
+        sum += numArry[index];
+        
+    }
+    avg = sum / numArry.length;
+    return avg;
 }
 
 //takes an array of numbers and returns the max number
 function maxNumber(numArry) {
-    return 0;
+    let max = numArry[0];
+
+    for (let index = 1; index < numArry.length; index++) {
+        if (numArry[index] > max) {
+            max = numArry[index];
+        }
+        
+    }
+    return max;
 }
 
 //takes an array of numbers and returns the min number
 function minNumber(numArry) {
-    return 0;
+    let min = numArry[0];
+
+    for (let index = 1; index < numArry.length; index++) {
+        if (numArry[index] < min) {
+            min = numArry[index];
+        }
+        
+    }
+    return min;
 }
