@@ -16,7 +16,12 @@ function displayNumbers() {
 
 //takes an array of numbers and the current index in the array and returns the sum of all the numbers using recursion
 //Recursion is the technique of the function calling itself. 
-function sumNumbers(numArry) {
-    return 0;
+function sumNumbers(numArry, index) {
+    //condition to stop recursion
+    if (index <= 0) {
+        return 0;
+    }
+    //call the recursive function and add the current value to the return
+    return sumNumbers(numArry, index - 1) + numArry[index - 1];
 }
 
